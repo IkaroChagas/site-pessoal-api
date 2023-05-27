@@ -12,7 +12,7 @@ const app = express();
 
 const port = process.env.APP_PORT || 5000;  
 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     res.send("Seja bem vindo a API do meu site pessoal")
 });
 

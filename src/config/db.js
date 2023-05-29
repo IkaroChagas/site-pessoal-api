@@ -15,13 +15,13 @@ const pool = new Pool({
 
 const initDatabase = async () => {
         await pool.query(`
-            CREATE TABLE IF NOT EXISTS experiencia (
+            CREATE TABLE IF NOT EXISTS experiencias (
                 id SERIAL PRIMARY KEY,
                 titulo VARCHAR(255) NOT NULL,
                 tipo VARCHAR(255) NOT NULL,
                 descricao TEXT NOT NULL,
-                ano_Inicio INT NOT NULL,
-                ano_Fim INT
+                anoInicio INT NOT NULL,
+                anoFim INT
             );
             `);
 

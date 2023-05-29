@@ -27,6 +27,6 @@ exports.updatePortfolio = async (req, res) => {
 
 exports.deletePortfolio = async (req, res) => {
     const id = parseInt(req.params.id);
-    await portfolioRepository.deletePorfolio(id);
+    await portfolioRepository.deletePortfolio(id);
     res.json({message: `Portfolio ${id} deletado`});
 };

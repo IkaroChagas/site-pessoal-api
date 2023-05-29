@@ -1,11 +1,11 @@
 const { pool } = require('../config/db');
 
-exports.getAllExperiencias = async () => {
+exports.getAllExperiencias = async (tipo) => {
         let query = "SELECT * FROM experiencia";
         if (tipo) {
                 query += `WHERE tipo = '${tipo}'`;      
         }
-        const result = await pool.query("SELECT * FROM experiencia");
+        const result = await pool.query(query);
         return result.rows;
 };
 
@@ -16,22 +16,22 @@ exports.getExperienciasById =  async (id) => {
 
 exports.createExperiencia = async (experiencia) => { 
         const result = await pool.query(`
-        INSERT INTO experiencia (titulo, tipo, descricao, ano_inicio, ano_fim)
+        INSERT INTO experiencia (titulo, tipo, descricao, anoInicio, anoFim)
         VALUES ($1, $2, $3, $4);
         RETURNING *
         `,
-       [experiencia.titulo, experiencia.tipo, experiencia.descricao, experiencia.ano_inicio, experiencia.ano_fim])
+       [experiencia.titulo, experiencia.tipo, experiencia.descricao, experiencia.anoInicio, experiencia.anoFim])
         return result.rows[0]
 };
 
 exports.updateExperiencia = async (id, experiencia) => {
         const result = await pool.query(`
                 UPDATE experiencia
-                SET titulo = $1, tipo = $2, descricao = $3 , ano_inicio = $4, ano_fim = $5
+                SET titulo = $1, tipo = $2, descricao = $3 , anoInicio = $4, anoFim = $5
                 WHERE id = ?
                 RETURNING *
         `,
-        [experiencia.titulo, experiencia.tipo, experiencia.descricao, experiencia.ano_inicio, experiencia.ano_fim])
+        [experiencia.titulo, experiencia.tipo, experiencia.descricao, experiencia.anoInicio, experiencia.anoFim])
         return result.rows[0]  
 }
 

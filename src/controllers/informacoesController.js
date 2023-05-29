@@ -8,7 +8,7 @@ exports.getInformacoes = async(req, res) => {
 
 exports.createInformacoes = async (req, res) => {
     const informacoes = req.body;
-    const newInformacoes = await informacoesRepository.createinformacoes(informacoes);
+    const newInformacoes = await informacoesRepository.createInformacoes(informacoes);
     res.json(newInformacoes);
 };
 

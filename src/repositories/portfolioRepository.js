@@ -19,4 +19,8 @@ exports.createPortfolio = async (portfolio) => {
         [portfolio.titulo, portfolio.descricao, portfolio.link, portfolio.imagem]);
         return result.rows[0];
 };
+
+exports.deletePortfolio = async (id) => {
+    await pool.query("DELETE FROM portfolio WHERE id = $1", [id])
+}
     

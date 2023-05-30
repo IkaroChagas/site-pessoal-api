@@ -12,9 +12,9 @@ exports.getPortfolioById = async (id) => {
 
 exports.createPortfolio = async (portfolio) => {
     const result = await pool.query(`
-        INSERT INTO portfolio (titulo, descricao, link, imagem)
+        INSERT INTO portfolio (titulo, descricao, link, image)
         VALUES ($1, $2, $3, $4)
-        RETURNING *
+        RETURNING *;
         `,
         [portfolio.titulo, portfolio.descricao, portfolio.link, portfolio.imagem]);
         return result.rows[0];

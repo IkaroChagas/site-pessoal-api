@@ -12,7 +12,6 @@ const dbValues = {
 const pool = new Pool(dbValues);
 
 
-
 const initDatabase = async () => {
         await pool.query(`
             CREATE TABLE IF NOT EXISTS experiencias (
@@ -30,6 +29,7 @@ const initDatabase = async () => {
                 id SERIAL PRIMARY KEY,
                 titulo VARCHAR(255) NOT NULL,
                 link VARCHAR(255) NOT NULL,
+                descricao VARCHAR(255) NOT NULL,
                 image VARCHAR(255) NOT NULL
              );
             `);

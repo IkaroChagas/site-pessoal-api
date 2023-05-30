@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', experienciasController.getAllExperiencias);
 router.get('/:id', experienciasController.getExperienciasById);
-router.post('/:id',experienciasController.createExperiencia);
+router.post('/',experienciasController.createExperiencia);
 router.put('/:id',experienciasController.updateExperiencia);
 router.delete('/:id',experienciasController.deleteExperiencia);
 

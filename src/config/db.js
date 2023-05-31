@@ -36,7 +36,7 @@ const initDatabase = async () => {
             
             await pool.query(`
             CREATE TABLE IF NOT EXISTS informacoes (
-               id INT PRIMARY KEY,
+               id SERIAL PRIMARY KEY,
                foto VARCHAR(255) NOT NULL,
                nome VARCHAR(255) NOT NULL,
                cargo VARCHAR(255) NOT NULL,

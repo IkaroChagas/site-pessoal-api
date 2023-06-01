@@ -23,7 +23,7 @@ app.use(express.json());
 app.use('/api/experiencias', experienciasRoute);
 app.use('/api/portfolio', portfolioRoute);
 app.use('/api/informacoes', informacoesRoute);
-app.use('/api/login', authRoute);
+app.use('/api/auth', authRoute);
 
 initDatabase();
 

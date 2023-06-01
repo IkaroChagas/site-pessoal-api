@@ -19,7 +19,6 @@ exports.updateInformacoes = async (req, res) => {
 }
 
 exports.deleteInformacoes= async (req, res) => {
-    const id = parseInt(req.params.id);
-    await informacoesRepository.deleteInformacoes(id);
-    res.json({message: `Informações ${id} deletadas`});
+    await informacoesRepository.deleteInformacoes();
+    res.json({message: 'Informações  deletadas'});
 };

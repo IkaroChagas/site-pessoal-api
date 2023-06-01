@@ -7,7 +7,7 @@ exports.getInformacoes = async () => {
 
 exports.createInformacoes = async (informacoes) => {
     const result = await pool.query(`
-      INSERT INTO informacoes (foto, nome, cargo, resumo)
+      INSERT INTO informacoes (id, foto, nome, cargo, resumo)
       VALUES (1, $1, $2, $3, $4)
       RETURNING *;
       `,
@@ -28,6 +28,6 @@ exports.createInformacoes = async (informacoes) => {
     return result.rows[0];
 }
   
-exports.deleteInformacoes= async (id) => {
-    await pool.query("DELETE FROM informacoes WHERE id = $1", [id])
+exports.deleteInformacoes= async () => {
+    await pool.query("DELETE FROM informacoes WHERE id = 1")
 };

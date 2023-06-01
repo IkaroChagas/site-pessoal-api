@@ -12,6 +12,12 @@ exports.createInformacoes = async (req, res) => {
     res.json(newInformacoes);
 };
 
+exports.updateInformacoes = async (req, res) => {
+    const informacoes = req.body;
+    const informacoesAtualizadas = await informacoesRepository.updateInformacoes(informacoes);
+    res.json(informacoesAtualizadas);
+}
+
 exports.deleteInformacoes= async (req, res) => {
     const id = parseInt(req.params.id);
     await informacoesRepository.deleteInformacoes(id);

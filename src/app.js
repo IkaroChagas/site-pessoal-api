@@ -20,7 +20,7 @@ app.get('/', (req, res, next) => {
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/experiencias', experienciasRoute);
+app.use('/api/experiencia', experienciasRoute);
 app.use('/api/portfolio', portfolioRoute);
 app.use('/api/informacoes', informacoesRoute);
 app.use('/api/auth', authRoute);
